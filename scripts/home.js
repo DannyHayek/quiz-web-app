@@ -54,7 +54,6 @@ localStorage.setItem("quizData", JSON.stringify(
 ));
 
 
-
 let quizData = JSON.parse(localStorage.getItem("quizData"));
 
 document.getElementById("welcome-user").innerHTML = `Welcome ${curUser}`
