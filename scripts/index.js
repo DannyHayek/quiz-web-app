@@ -1,8 +1,8 @@
 const login = document.getElementById("login");
 const register = document.getElementById("register");
-const users = [];
+//const users = [];
 let curUser = {};
-localStorage.setItem("users", JSON.stringify(users));
+//localStorage.setItem("users", JSON.stringify(users));
 
 register.addEventListener("click", storeUser);
 login.addEventListener("click", loginUser);
@@ -29,11 +29,16 @@ function storeUser() {
     NAUserOff();
     alreadyUserOff();
 
+    if (JSON.parse(localStorage.getItem("users")) == null) {
+        localStorage.setItem("users", JSON.stringify([]));
+    } else {
 
     const user = document.getElementById("username");
     const pass = document.getElementById("password");
 
-    let userList = JSON.parse(localStorage.getItem(users));
+    let userList = JSON.parse(localStorage.getItem("users"));
+
+    console.log(userList);
 
     if (user.value == "" || pass.value == "") {
         console.log("You have missing data!");
@@ -51,10 +56,10 @@ function storeUser() {
             score4: 0,
         })
 
-        localStorage.setItem(users, JSON.stringify(userList));
-        localStorage.setItem("username" , user.value);
-        localStorage.setItem("password" , pass.value);
-        localStorage.setItem("score", 0)
+        localStorage.setItem("users", JSON.stringify(userList));
+        // localStorage.setItem("username" , user.value);
+        // localStorage.setItem("password" , pass.value);
+        // localStorage.setItem("score", 0)
         loginReadyOn();
     }
 
@@ -62,6 +67,8 @@ function storeUser() {
     pass.value = "";
 
     // console.log(localStorage);
+
+    }
 }
 
 function loginUser() {
@@ -75,36 +82,62 @@ function loginUser() {
     const user = document.getElementById("username");
     const pass = document.getElementById("password");
 
+    // let userList = JSON.parse(localStorage.getItem("users"));
+
     if (user.value == "" || pass.value == "") {
         console.log("You have missing data!");
         infoMissingOn();
+    } else if (checkUsers(user.value) && checkPassword(user.value, pass.value)){
+        console.log("LOGGED IN!");
+        window.location.href = "../pages/home.html";
+    } else if (checkUsers(user.value) && !checkPassword(user.value, pass.value)) {
+        console.log("Incorrect password!")
+        errorPassOn();
     } else {
-        if (user.value == localStorage.getItem("username") && pass.value == localStorage.getItem("password")) {
-            console.log("LOGGED IN!")
-            window.location.href = "../pages/home.html";
-        } else if (user.value == localStorage.getItem("username") && pass.value != localStorage.getItem("password")){
-            console.log("Incorrect password!")
-            errorPassOn();
-        } else {
-            console.log("USER DOES NOT EXIST! PLEASE REGISTER FIRST!")
-            NAUserOn();
-        }
+        console.log("USER DOES NOT EXIST! PLEASE REGISTER FIRST!")
+        NAUserOn();
     }
 
     user.value = "";
     pass.value = "";
 
-    console.log(localStorage);
+    // console.log(localStorage);
 }
 
 function checkUsers (username) {
-    let userList = JSON.parse(localStorage.getItem(users));
+    let userList = JSON.parse(localStorage.getItem("users"));
+
+    console.log(userList);
 
     for (let i = 0; i < userList.length; i++) {
         if (userList[i].username == username) {
+            console.log("User check true");
+
             return true;
         }
     }
+    console.log("User check false");
+
+    return false;
+}
+
+function checkPassword (username, password) {
+    let userList = JSON.parse(localStorage.getItem("users"));
+
+    console.log(userList);
+
+    for (let i = 0; i < userList.length; i++) {
+        console.log(userList[i].password);
+        console.log(password);
+
+        if (userList[i].username == username && userList[i].password == password) {
+            console.log("Password check true");
+
+            return true;
+        }
+    }
+    console.log("Password check false");
+
     return false;
 }
 
