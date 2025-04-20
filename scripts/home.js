@@ -68,7 +68,7 @@ for (let i = 0; i < quizButtons.length; i++) {
     button.addEventListener("click", function () {
         console.log(button.id);
         localStorage.setItem("currentQuiz", button.id)
-
+        window.location.href = "../pages/quiz.html";
     });
 
     console.log(localStorage.getItem("currentQuiz"));
