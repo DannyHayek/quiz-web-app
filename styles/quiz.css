@@ -43,5 +43,11 @@ main {
 }
 
 .quiz-text {
-    
+    width: 40%;
+    height: 80%;
+    text-align: center;
+}
+
+.question-image {
+    width: 30%;
 }
