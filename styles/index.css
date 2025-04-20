@@ -106,3 +106,10 @@ main {
     height: 2rem;
     text-align: center;
 }
+
+.image-aside {
+    right: 2%;
+    width: 15%;
+    height: 17%;
+    margin: 20px;
+}
