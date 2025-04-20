@@ -81,5 +81,13 @@ const quizButtons = document.querySelectorAll(".take-quiz-button");
 
 for (let i = 0; i < quizButtons.length; i++) {
     let button = quizButtons[i];
-    button.addEventListener("click", function () {console.log(button.id);});
+    button.addEventListener("click", function () {
+        console.log(button.id);
+        localStorage.setItem("currentQuiz", button.id)
+        
+    });
+
+    console.log(localStorage.getItem("currentQuiz"));
 }
+
+console.log(localStorage.getItem("currentQuiz"));
