@@ -34,5 +34,17 @@ for (let i = 0; i < curQuiz.questions.length; i++) {
             </button>
         </div>`;
     }
+}
+
+const answerButtons = document.querySelectorAll(".buttons");
+
+console.log(answerButtons);
+
+for (let i = 0; i < answerButtons.length; i++) {
+    let button = answerButtons[i];
+    button.addEventListener("click", function () {
+        console.log(button.innerText);
+    });
 
 }
+
