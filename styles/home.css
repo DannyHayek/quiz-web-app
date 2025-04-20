@@ -1,0 +1,74 @@
+header {
+    padding: 1%;
+    margin-bottom: 10px;
+    border: 1px;
+    border-style: double;
+}
+
+main {
+    min-height: 50em;
+}
+
+.welcome-message {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.homepage-cards {
+    height: 50em;
+    width: 100%;
+}
+
+.homepage-quiz-card {
+    min-width: 20rem;
+    max-width: 20rem;
+    min-height: 24rem;
+    max-height: 26rem;
+    border-radius: 10px;
+    border: 10px;
+    margin: 15px;
+    border-style: double;
+    background-color: aliceblue;
+}
+
+.quiz-card-titles {
+    text-align: center;
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-style: dashed;
+    border-top: 1px;
+    border-right: 1px;
+    border-left: 1px;
+}
+
+.quiz-card-description {
+    text-align: center;
+    max-width: 100%;
+    padding: 10%;
+}
+
+.buttons {
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+    margin: 15px;
+    font-size: xx-large;
+}
+
+.take-quiz-button {
+    background-color: darkblue;
+    color:white;
+}
+
+.take-quiz-button:hover {
+    background-color: rgb(38, 38, 211);
+    color:white;
+}
+
+.image-above-card {
+    width: 100px;
+    height: 100px;
+}
