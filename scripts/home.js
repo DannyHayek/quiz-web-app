@@ -24,17 +24,21 @@ const quizzes = [
     },
     {
         id: 4,
-        topic: "Greatest Instructor",
-        description: "The technical field of computer science is vast and unprecendented. The advancements in this field have been rapid and continuous, and so for new students to enter the domain, great instructors must take it upon themselves to continue the flow of information. But of all the instructors, only one can truly be considered the greatest.",
-        answers: ["Taha Not Taha", "Hata Hata", "Thaa Aath", "Taha Taha"],
-        correct: 3
+        topic: "Computer Parts",
+        description: "Computers are complicated machines, with many different parts, each responsible for a separate function. Most people struggle to identify even the main parts, and it is easy to get confused betweent them. Can you tell which part is not actually a computer part?",
+        answers: ["LOL", "RAM", "CPU", "HDD"],
+        correct: 1
     }
 ]
 
+localStorage.setItem("quizData", JSON.stringify(quizzes));
+
+let quizData = JSON.parse(localStorage.getItem("quizData"));
+
 document.getElementById("welcome-user").innerHTML = `Welcome ${curUser}`
 
-for (let i = 0; i < quizzes.length; i++) {
-    const quiz = quizzes[i];
+for (let i = 0; i < quizData.length; i++) {
+    const quiz = quizData[i];
   
     quizCards.innerHTML += `<article class="flex column flex-space-evenly">
                                 <img class="image-above-card" src="../assets/question-mark.svg" alt="question marks">
