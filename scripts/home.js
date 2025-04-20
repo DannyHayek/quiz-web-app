@@ -56,7 +56,7 @@ localStorage.setItem("quizData", JSON.stringify(
 
 let quizData = JSON.parse(localStorage.getItem("quizData"));
 
-document.getElementById("welcome-user").innerHTML = `Welcome ${curUser}`
+document.getElementById("welcome-user").innerHTML = `Welcome ${JSON.parse(localStorage.getItem("currentUser")).username}`
 
 for (let i = 0; i < quizData.length; i++) {
     const quiz = quizData[i];

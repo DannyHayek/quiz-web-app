@@ -89,6 +89,8 @@ function loginUser() {
         infoMissingOn();
     } else if (checkUsers(user.value) && checkPassword(user.value, pass.value)){
         console.log("LOGGED IN!");
+        setCurrentUser(user.value);
+        console.log(JSON.parse(localStorage.getItem("currentUser")));
         window.location.href = "../pages/home.html";
     } else if (checkUsers(user.value) && !checkPassword(user.value, pass.value)) {
         console.log("Incorrect password!")
@@ -139,6 +141,18 @@ function checkPassword (username, password) {
     console.log("Password check false");
 
     return false;
+}
+
+function setCurrentUser (username) {
+    let userList = JSON.parse(localStorage.getItem("users"));
+
+    for (let i = 0; i < userList.length; i++) {
+        if (userList[i].username == username) {
+            console.log(`${username} set as current user`)
+            localStorage.setItem("currentUser", JSON.stringify(userList[i]));
+            return;
+        }
+    }
 }
 
 function infoMissingOn() {
