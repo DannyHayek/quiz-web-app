@@ -2,6 +2,7 @@ const login = document.getElementById("login");
 const register = document.getElementById("register");
 const users = [];
 let curUser = {};
+localStorage.setItem("users", JSON.stringify(users));
 
 register.addEventListener("click", storeUser);
 login.addEventListener("click", loginUser);
@@ -32,6 +33,8 @@ function storeUser() {
     const user = document.getElementById("username");
     const pass = document.getElementById("password");
 
+    let userList = JSON.parse(localStorage.getItem(users));
+
     if (user.value == "" || pass.value == "") {
         console.log("You have missing data!");
         infoMissingOn();
@@ -39,7 +42,7 @@ function storeUser() {
         console.log("This user already exists!");
         alreadyUserOn();
     } else {
-        users.push({
+        userList.push({
             username: user.value,
             password: pass.value,
             score1: 0,
@@ -47,6 +50,8 @@ function storeUser() {
             score3: 0,
             score4: 0,
         })
+
+        localStorage.setItem(users, JSON.stringify(userList));
         localStorage.setItem("username" , user.value);
         localStorage.setItem("password" , pass.value);
         localStorage.setItem("score", 0)
@@ -93,8 +98,10 @@ function loginUser() {
 }
 
 function checkUsers (username) {
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].username == username) {
+    let userList = JSON.parse(localStorage.getItem(users));
+
+    for (let i = 0; i < userList.length; i++) {
+        if (userList[i].username == username) {
             return true;
         }
     }
