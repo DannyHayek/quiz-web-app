@@ -76,13 +76,15 @@
     margin: 20px;
 }
 
-.missing-info {
-    color: red;
-    display: none;
-}
-
-.ready-login {
-    color: green;
+.ui-messages {
     display: none;
     text-align: center;
+}
+
+.error-message {
+    color: red;
+}
+
+.login-message {
+    color: green;
 }

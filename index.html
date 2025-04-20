@@ -6,7 +6,8 @@
     <title>InQuizitive - Login Page</title>
     <link rel="stylesheet" href="./styles/index.css"/>
     <link rel="stylesheet" href="./styles/global.css" />
-    <script src="./scripts/index.js" defer></script> 
+    <script src="./scripts/index.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="./assets/question-mark.svg">
 </head>
 <body>
     <header class="flex flex-center login-header">
@@ -17,8 +18,11 @@
         <img class="image-aside" src="./assets/question-mark.svg" alt="question marks">
 
         <div class="flex flex-center column forms-buttons">
-            <h3 id="missing-info" class="inquiz-text-font missing-info">You have missing information!</h3>
-            <h3 id="ready-login" class="inquiz-text-font ready-login">You may now login with those credentials!</h3>
+            <h3 id="missing-info" class="inquiz-text-font ui-messages error-message">You have missing information!</h3>
+            <h3 id="ready-login" class="inquiz-text-font ui-messages login-message">You may now login with those credentials!</h3>
+            <h3 id="error-pass" class="inquiz-text-font ui-messages error-message">Incorrect password!</h3>
+            <h3 id="na-user" class="inquiz-text-font ui-messages error-message">This user does not exist!</h3>
+
             <div class="user-pass-div">
                 <form class="flex flex-center column">
                     <label class = "inquiz-text-font user-pass-text">Username</label>
