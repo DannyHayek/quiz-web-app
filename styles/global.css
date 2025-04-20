@@ -30,6 +30,10 @@ body {
     align-items: center;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 @font-face {
     font-family: inquiz-font;
     src: url(../assets/inquizitive-font.TTF);

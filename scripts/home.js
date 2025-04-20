@@ -21,6 +21,13 @@ const quizzes = [
         description: "The technical field of computer science is vast and unprecendented. The advancements in this field have been rapid and continuous, and so for new students to enter the domain, great instructors must take it upon themselves to continue the flow of information. But of all the instructors, only one can truly be considered the greatest.",
         answers: ["Taha Not Taha", "Hata Hata", "Thaa Aath", "Taha Taha"],
         correct: 3
+    },
+    {
+        id: 4,
+        topic: "Greatest Instructor",
+        description: "The technical field of computer science is vast and unprecendented. The advancements in this field have been rapid and continuous, and so for new students to enter the domain, great instructors must take it upon themselves to continue the flow of information. But of all the instructors, only one can truly be considered the greatest.",
+        answers: ["Taha Not Taha", "Hata Hata", "Thaa Aath", "Taha Taha"],
+        correct: 3
     }
 ]
 
