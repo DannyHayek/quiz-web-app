@@ -4,8 +4,8 @@
 }
 
 body {
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(lightblue, darkblue);
 }
 
 .flex {
@@ -30,6 +30,7 @@ body {
     src: url(../assets/inquizitive-font.TTF);
 }
 
+
 .inquiz-title-font {
     font-family:'inquiz-font';
     font-size: 300%;
@@ -47,8 +48,12 @@ header {
 }
 
 .forms-buttons {
-    max-width: 100%;
-    min-width: 50%;
+    max-width: 50%;
+    min-width: 25%;
     max-height: 80vh;
     min-height: 40vh;
+    border: 1px;
+    border-style: groove;
+    border-radius: 10%;
+    background-color: aliceblue;
 }
