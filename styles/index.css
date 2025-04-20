@@ -75,3 +75,8 @@
     height: 17%;
     margin: 20px;
 }
+
+.missing-info {
+    color: red;
+    display: none;
+}
