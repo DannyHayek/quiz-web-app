@@ -27,6 +27,7 @@ main {
 .take-quiz-button {
     background-color: darkblue;
     color:white;
+    font-size: 1.5em;
 }
 
 .take-quiz-button:hover {
