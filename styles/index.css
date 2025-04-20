@@ -27,15 +27,23 @@ body {
 
 @font-face {
     font-family: inquiz-font;
-    src: url(../assets/InQuizitive\ Font.TTF);
+    src: url(../assets/inquizitive-font.TTF);
 }
 
 .inquiz-title-font {
     font-family:'inquiz-font';
+    font-size: 300%;
 }
 
 .inquiz-text-font {
     font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    max-width: 100%;
+    min-width: 50%;
+    max-height: 40em;
+    min-height: 20em;
 }
 
 .forms-buttons {
