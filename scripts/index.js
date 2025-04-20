@@ -44,7 +44,7 @@ function loginUser() {
     } else {
         if (user.value == localStorage.getItem("username") && pass.value == localStorage.getItem("password")) {
             console.log("LOGGED IN!")
-            
+            window.location.href = "../pages/home.html";
         } else if (user.value == localStorage.getItem("username") && pass.value != localStorage.getItem("password")){
             console.log("Incorrect password!")
             errorPassOn();
