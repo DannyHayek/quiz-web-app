@@ -1,50 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    min-height: 100vh;
-    background-image: linear-gradient(lightblue, darkblue);
-}
-
-.flex {
-    display: flex;
-}
-
-.row {
-    flex-direction: row;
-}
-    
-.column {
-    flex-direction: column;
-}
-
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
-
-@font-face {
-    font-family: inquiz-font;
-    src: url(../assets/inquizitive-font.TTF);
-}
-
-
-.inquiz-title-font {
-    font-family:'inquiz-font';
-    font-size: 1000%;
-}
-
-.inquiz-text-font {
-    font-family: 'Courier New', Courier, monospace;
-}
-
-header {
+.login-header {
     max-width: 100%;
     min-width: 50%;
     max-height: 40em;
     min-height: 20em;
+}
+
+.login-title {
+    font-size: 1000%;
 }
 
 .forms-buttons {
@@ -58,7 +20,7 @@ header {
     background-color: aliceblue;
 }
 
-main {
+.login-main {
     min-width: 100%;
     min-height: 60%;
 }

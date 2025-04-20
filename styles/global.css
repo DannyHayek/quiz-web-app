@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(lightblue, darkblue);
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+    
+.column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    font-family: inquiz-font;
+    src: url(../assets/inquizitive-font.TTF);
+}
+
+
+.inquiz-title-font {
+    font-family:'inquiz-font';
+}
+
+.inquiz-text-font {
+    font-family: 'Courier New', Courier, monospace;
+}
