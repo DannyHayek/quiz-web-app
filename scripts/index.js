@@ -9,11 +9,13 @@ function storeUser() {
 
     if (user.value == "" || pass.value == "") {
         console.log("You have missing data!");
+        loginReadyOff();
         infoMissingOn();
     } else {
         localStorage.setItem("username" , user.value);
         localStorage.setItem("password" , pass.value);
         infoMissingOff();
+        loginReadyOn();
     }
 
     user.value = "";
@@ -28,4 +30,12 @@ function infoMissingOn() {
 
 function infoMissingOff() {
     document.getElementById("missing-info").style.display = "none";
+}
+
+function loginReadyOn() {
+    document.getElementById("ready-login").style.display = "block";
+}
+
+function loginReadyOff() {
+    document.getElementById("ready-login").style.display = "none";
 }

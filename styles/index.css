@@ -80,3 +80,9 @@
     color: red;
     display: none;
 }
+
+.ready-login {
+    color: green;
+    display: none;
+    text-align: center;
+}
