@@ -19,6 +19,7 @@ function storeUser() {
     } else {
         localStorage.setItem("username" , user.value);
         localStorage.setItem("password" , pass.value);
+        localStorage.setItem("score", 0)
         loginReadyOn();
     }
 
