@@ -1,16 +1,17 @@
 const curUser = localStorage.getItem("username");
+const quizCards = document.getElementById("quiz-cards")
 const quizzes = [
     {
         id: 1,
         topic: "Mount Everest",
-        description: "This quiz is about the tallest point on our planet! Not many people know the exact height of Mount Everest, but can you answer this question? When you are on the peak, you are almost at the edge of the atmosphere!",
+        description: "This quiz is about the tallest point on our planet! Not many people know the exact height of Mount Everest, but can you answer this question?",
         answers: [7245, 8848, 9320, 10065],
         correct: 2
     },
     {
         id: 2,
         topic: "Highest Grossing Movie",
-        description: "Over the last 100 years, the movie-making industry has been expanding and growing, meeting the demands of ever changing audience interest, but during this time, several amazing movies released to great acclaim, earning large amounts of money, but the leaderboard of the highest grossing has constantly shifted, especially when inflation and reruns are taken into account.",
+        description: "Over the last 100 years, the movie-making industry has been expanding and growing, meeting the demands of ever changing audience interest and the leaderboard of the highest grossing has constantly shifted, especially when inflation and reruns are taken into account.",
         answers: ["Avengers: Endgame", "Titanic", "Avatar", "Avatar: The Way of Water"],
         correct: 3
     },
@@ -25,3 +26,22 @@ const quizzes = [
 
 document.getElementById("welcome-user").innerHTML = `Welcome ${curUser}`
 
+for (let i = 0; i < quizzes.length; i++) {
+    const quiz = quizzes[i];
+  
+    quizCards.innerHTML += `<article class="flex column flex-space-evenly">
+                                <img class="image-above-card" src="../assets/question-mark.svg" alt="question marks">
+                                <div class="homepage-quiz-card flex column flex-space-evenly">
+                                    <h1 class="inquiz-title-font quiz-card-titles">${quiz.topic}</h1>
+
+                                    <p class="inquiz-text-font quiz-card-description">
+                                        ${quiz.description}
+                                    </p>
+
+                                    <button class="buttons take-quiz-button inquiz-title-font">
+                                        Take Quiz!
+                                    </button>
+                                </div>
+                            </article>`
+
+}
