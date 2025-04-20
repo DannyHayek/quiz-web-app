@@ -4,31 +4,51 @@ localStorage.setItem("quizData", JSON.stringify(
     [
         {
             id: 1,
-            topic: "Mount Everest",
-            description: "This quiz is about the tallest point on our planet! Not many people know the exact height of Mount Everest, but can you answer this question?",
-            answers: [7245, 8848, 9320, 10065],
-            correct: 2
+            topic: "Geography",
+            description: "This quiz will test your knowledge of geography! Prepare to answer difficult questions about different points on our blue planet!",
+            questions: ["How tall is Mount Everest (in meters)?", "How deep is the Mariana Trench (in meters)?", "What is the common name of the loneliest point on Earth?"],
+            answersQ1: [7245, 8848, 9320, 10065],
+            correctQ1: 3,
+            answersQ2: [5032, 7999, 12000, 10984],
+            correctQ2: 4,
+            answersQ3: ["Point Nemo", "Point Dory", "Point Taha", "Point Posiedon"],
+            correctQ3: 1,
         },
         {
             id: 2,
-            topic: "Highest Grossing Movie",
-            description: "Over the last 100 years, the movie-making industry has been expanding and growing, meeting the demands of ever changing audience interest and the leaderboard of the highest grossing has constantly shifted, especially when inflation and reruns are taken into account.",
-            answers: ["Avengers: Endgame", "Titanic", "Avatar", "Avatar: The Way of Water"],
-            correct: 3
+            topic: "Movies",
+            description: "Over the last 100 years, the movie-making industry has been expanding and growing, meeting the demands of ever changing audience interest. Can you answer these movie related questions?",
+            questions: ["What is the highest grossing movie of all time?", "What is the highest grossing movie when adjusted for inflation?", "In what year did Back to the Future release?"],
+            answersQ1: ["Avengers: Endgame", "Titanic", "Avatar", "Avatar: The Way of Water"],
+            correctQ1: 3,
+            answersQ2: ["Avatar", "Star Wars", "Gone with the Wind", "Titanic"],
+            correctQ2: 3,
+            answersQ3: [1990, 1985, 1970, 2001],
+            correctQ3: 2,
         },
         {
             id: 3,
-            topic: "Greatest Instructor",
-            description: "The technical field of computer science is vast and unprecendented. The advancements in this field have been rapid and continuous, and so for new students to enter the domain, great instructors must take it upon themselves to continue the flow of information. But of all the instructors, only one can truly be considered the greatest.",
-            answers: ["Taha Not Taha", "Hata Hata", "Thaa Aath", "Taha Taha"],
-            correct: 3
+            topic: "Teachers",
+            description: "Throughout history, humanity has persisted utop the shoulders of teachers and instructors. Some stood out amongst their peers as the greatest, having taught the greatest.",
+            questions: ["Who was the teacher of Alexander the Great?", "Who was Plato's teacher?", "Who is the greatest instructor?"],
+            answersQ1: ["Aristotle", "Plato", "Pythagoras", "Einstein"],
+            correctQ1: 1,
+            answersQ2: ["Voltaire", "Sun Tzu", "Euclides", "Socrates"],
+            correctQ2: 4,
+            answersQ3: ["Taha Not Taha", "Hata Hata", "Thaa Aath", "Taha Taha"],
+            correctQ3: 4
         },
         {
             id: 4,
             topic: "Computer Parts",
-            description: "Computers are complicated machines, with many different parts, each responsible for a separate function. Most people struggle to identify even the main parts, and it is easy to get confused betweent them. Can you tell which part is not actually a computer part?",
-            answers: ["LOL", "RAM", "CPU", "HDD"],
-            correct: 1
+            description: "Computers are complicated machines, with many different parts, each responsible for a separate function. Most people struggle to identify even the main parts, and it is easy to get confused betweent them.",
+            questions: ["Which part is considered the short term memory?", "Which part is the backbone of most of the other parts?", "Which of these is not a real part?"],
+            answersQ1: ["RAM", "CPU", "Motherboard", "Ethernet Port"],
+            correctQ1: 1,
+            answersQ2: ["PSU", "Motherboard", "Heat Sink", "GPU"],
+            correctQ2: 2,
+            answersQ3: ["LOL", "RAM", "CPU", "HDD"],
+            correctQ3: 1
         }
     ]
 ));
