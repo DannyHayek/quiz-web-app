@@ -1,4 +1,3 @@
-const curUser = localStorage.getItem("username");
 const quizCards = document.getElementById("quiz-cards")
 localStorage.setItem("quizData", JSON.stringify(
     [
@@ -70,10 +69,17 @@ for (let i = 0; i < quizData.length; i++) {
                                         ${quiz.description}
                                     </p>
 
-                                    <button class="buttons take-quiz-button inquiz-title-font">
+                                    <button id="quiz${quiz.id}" class="buttons take-quiz-button inquiz-title-font">
                                         Take Quiz!
                                     </button>
                                 </div>
                             </article>`
 
+}
+
+const quizButtons = document.querySelectorAll(".take-quiz-button");
+
+for (let i = 0; i < quizButtons.length; i++) {
+    let button = quizButtons[i];
+    button.addEventListener("click", function () {console.log(button.id);});
 }
