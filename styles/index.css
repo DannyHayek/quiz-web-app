@@ -33,7 +33,7 @@ body {
 
 .inquiz-title-font {
     font-family:'inquiz-font';
-    font-size: 300%;
+    font-size: 1000%;
 }
 
 .inquiz-text-font {
@@ -48,12 +48,61 @@ header {
 }
 
 .forms-buttons {
-    max-width: 50%;
-    min-width: 25%;
-    max-height: 80vh;
-    min-height: 40vh;
+    max-width: 25%;
+    min-width: 20%;
+    max-height: 50rem;
+    min-height: 25rem;
     border: 1px;
     border-style: groove;
-    border-radius: 10%;
+    border-radius: 8%;
     background-color: aliceblue;
+}
+
+main {
+    min-width: 100%;
+    min-height: 60%;
+}
+
+.authen-buttons {
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.login-button {
+    background-color: darkblue;
+    color:white;
+}
+
+.login-button:hover {
+    background-color: rgb(38, 38, 211);
+    color:white;
+}
+
+.register-button {
+    background-color: white;
+    color: darkblue;
+}
+
+.register-button:hover {
+    background-color: rgb(224, 228, 230);
+    color: rgb(28, 176, 246)
+}
+
+.user-pass-div {
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.user-pass-text {
+    font-size: x-large;
+    margin: 4px;
+}
+
+.user-pass-input {
+    border-radius: 10px;
+    width: 15rem;
+    height: 2rem;
+    text-align: center;
 }
