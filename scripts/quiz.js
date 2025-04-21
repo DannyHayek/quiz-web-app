@@ -3,12 +3,16 @@ let currentQuizID = parseInt(localStorage.getItem("currentQuiz").charAt(4));
 console.log(currentQuizID);
 let curQuiz = quizData[currentQuizID];
 const questionsCards = document.getElementById("question-card");
+const curUser = JSON.parse(localStorage.getItem("currentUser"));
+const curQuizScore = "score" + (curQuiz.id + 1);
+
+console.log(curQuizScore);
 
 document.getElementById("quiz-name").innerHTML += `${curQuiz.topic}`;
 
 for (let i = 0; i < curQuiz.questions.length; i++) {
 
-    questionsCards.innerHTML += `<section class = "question-card flex flex-space-evenly">
+    questionsCards.innerHTML += `<section id="${i}" class = "question-card flex flex-space-evenly">
                                     <div class = "flex column flex-space-evenly quiz-text">
                                         <img class="question-image" src="../assets/question-mark.svg" alt="question mark">
 
@@ -42,11 +46,17 @@ console.log(answerButtons);
 
 for (let i = 0; i < answerButtons.length; i++) {
     let button = answerButtons[i];
-    button.addEventListener("click", function () {
-        console.log(button.innerText);
-    });
-
+    button.addEventListener("click", answerSelected);
 }
 
+function answerSelected(e) {
+    const questionID = e.target.parentNode.parentNode.parentNode.id;
 
+    console.log(correct, selected);
 
+    if (curQuiz.correct[questionID] == e.target.innerText) {
+        console.log("CORRECT");
+        return;
+    }
+    console.log("WRONG");
+}
