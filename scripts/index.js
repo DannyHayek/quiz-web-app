@@ -7,15 +7,17 @@ let curUser = {};
 register.addEventListener("click", storeUser);
 login.addEventListener("click", loginUser);
 
-// localStorage.clear();
+//localStorage.clear();
 
-let test = {
-    username: "Danny",
-    password: "123",
+let admin = {
+    username: "admin",
+    password: "admin",
     scores: [0, 0, 0, 0],
 }
 
-localStorage.setItem("currentUser", JSON.stringify(test));
+localStorage.setItem("users", JSON.stringify([admin]))
+
+localStorage.setItem("currentUser", JSON.stringify(admin));
 
 let temp = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -28,8 +30,8 @@ function storeUser() {
     NAUserOff();
     alreadyUserOff();
 
-    if (JSON.parse(localStorage.getItem("users")) == null) {
-        localStorage.setItem("users", JSON.stringify([]));
+    if (JSON.parse(localStorage.getItem("users")) == []) {
+        localStorage.setItem("users", JSON.stringify([admin]));
     } else {
 
     const user = document.getElementById("username");
@@ -87,7 +89,11 @@ function loginUser() {
         console.log("LOGGED IN!");
         setCurrentUser(user.value);
         console.log(JSON.parse(localStorage.getItem("currentUser")));
-        window.location.href = "../pages/home.html";
+        if (user.value == "admin"){
+            window.location.href = "../pages/dash.html";
+        } else {
+            window.location.href = "../pages/home.html";
+        }
     } else if (checkUsers(user.value) && !checkPassword(user.value, pass.value)) {
         console.log("Incorrect password!")
         errorPassOn();
