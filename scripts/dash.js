@@ -14,13 +14,13 @@ console.log(users);
 for (let i = 0; i < users.length; i++) {
     let trID = "table-row" + i;
     console.log(users);
-    userTable.innerHTML += `<tr id="${trID}">
-                                <td class = "inquiz-text-font table-row">${users[i].username}</td>
-                                <td class = "inquiz-text-font table-row">${users[i].password}</td>
+    userTable.innerHTML += `<tr id="${trID}" class = "table-row">
+                                <td class = "inquiz-text-font table-data">${users[i].username}</td>
+                                <td class = "inquiz-text-font table-data">${users[i].password}</td>
                             </tr>`
 
     let curRow = document.getElementById(trID);
     for (let j = 0; j < users[i].scores.length; j++) {
-        curRow.innerHTML += `<td class = "inquiz-text-font table-row">${users[i].scores[j]}/3</td>`
+        curRow.innerHTML += `<td class = "inquiz-text-font table-data">${users[i].scores[j]}/3</td>`
     }                            
 }

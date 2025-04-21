@@ -26,27 +26,27 @@ main {
     color: rgb(28, 176, 246)
 }
 
-.user-table {
-    border: 10px groove black;
-}
-
-.table-head {
-    border-bottom: 3px solid black;
-    text-align: center;
-}
-
 table {
     border-collapse: collapse;
-    width: 60%;
+    width: 70%;
     border: 10px groove black;
+    background-color: aliceblue;
 }
-  
+
 td, th {
-    border: 1px solid black;
+    border: 1px solid #bebcbc;
     text-align: center;
     padding: 10px;
 }
 
-tr:nth-child(odd) {
+th {
+    border-bottom: 3px solid black;
+}
+
+/* tr {
     background-color: aliceblue;
+} */
+
+td:nth-child(even) {
+    background-color: lightblue;
 }
