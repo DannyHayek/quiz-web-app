@@ -27,14 +27,22 @@ main {
 }
 
 .user-table {
-    background-color: aliceblue;
     border: 10px groove black;
 }
 
 .table-head {
     border-bottom: 3px solid black;
+    text-align: center;
+}
+
+tr {
+    background-color: aliceblue;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+    background-color: lightblue;
+}
+
+td {
+    text-align: center;
+}
