@@ -53,3 +53,14 @@ main {
 .question-image {
     width: 30%;
 }
+
+.submit-button {
+    width: 40%;
+}
+
+footer {
+    max-width: 100%;
+    min-width: 50%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
