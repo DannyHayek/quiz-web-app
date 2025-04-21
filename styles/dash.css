@@ -1,0 +1,21 @@
+header {
+    padding: 1%;
+    margin-bottom: 10px;
+    border: 1px;
+    border-style: double;
+}
+
+.logout-button {
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+    margin: 15px;
+    font-size: xx-large;
+    background-color: white;
+    color: darkblue;
+}
+
+.logout-button:hover {
+    background-color: rgb(224, 228, 230);
+    color: rgb(28, 176, 246)
+}
