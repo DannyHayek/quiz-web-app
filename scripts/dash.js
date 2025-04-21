@@ -12,20 +12,15 @@ console.log(users);
 
 
 for (let i = 0; i < users.length; i++) {
+    let trID = "table-row" + i;
     console.log(users);
-    userTable.innerHTML += `<tr id="table-row">
+    userTable.innerHTML += `<tr id="${trID}">
                                 <td class = "inquiz-text-font table-row">${users[i].username}</td>
                                 <td class = "inquiz-text-font table-row">${users[i].password}</td>
-                                <td class = "inquiz-text-font table-row">${users[i].scores[0]}/3</td>
-                                <td class = "inquiz-text-font table-row">${users[i].scores[1]}/3</td>
-                                <td class = "inquiz-text-font table-row">${users[i].scores[2]}/3</td>
-                                <td class = "inquiz-text-font table-row">${users[i].scores[3]}/3</td>
                             </tr>`
 
-    // let curRow = document.getElementById("table-row");
-    // for (let j = 0; j < users.scores.length; j++) {
-    //     curRow.innerHTML += `<td class = "inquiz-text-font table-row">${users[j].password}</td>`
-    // }
-
-                                
+    let curRow = document.getElementById(trID);
+    for (let j = 0; j < users[i].scores.length; j++) {
+        curRow.innerHTML += `<td class = "inquiz-text-font table-row">${users[i].scores[j]}/3</td>`
+    }                            
 }
