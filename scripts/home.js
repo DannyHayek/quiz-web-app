@@ -11,6 +11,7 @@ localStorage.setItem("quizData", JSON.stringify(
             questions: ["How tall is Mount Everest (in meters)?", "How deep is the Mariana Trench (in meters)?", "What is the common name of the loneliest point on Earth?"],
             answers: [[7245, 8848, 9320, 10065], [5032, 7999, 12000, 10984], ["Point Nemo", "Point Dory", "Point Taha", "Point Posiedon"]],
             correct: [9320, 10984, "Point Nemo"],
+            image: "../assets/globe.png",
         },
         {
             id: 1,
@@ -19,6 +20,7 @@ localStorage.setItem("quizData", JSON.stringify(
             questions: ["What is the highest grossing movie of all time?", "What is the highest grossing movie when adjusted for inflation?", "In what year did Back to the Future release?"],
             answers: [["Avengers: Endgame", "Titanic", "Avatar", "Avatar: The Way of Water"], ["Avatar", "Star Wars", "Gone with the Wind", "Titanic"], [1990, 1985, 1970, 2001]],
             correct: ["Avatar", "Gone with the Wind", 1985],
+            image: "../assets/film-reel.png",
         },
         {
             id: 2,
@@ -27,6 +29,7 @@ localStorage.setItem("quizData", JSON.stringify(
             questions: ["Who was the teacher of Alexander the Great?", "Who was Plato's teacher?", "Who is the greatest instructor?"],
             answers: [["Aristotle", "Plato", "Pythagoras", "Einstein"], ["Voltaire", "Sun Tzu", "Euclides", "Socrates"], ["Taha Not Taha", "Hata Hata", "Thaa Aath", "Taha Taha"]],
             correct: ["Aristotle", "Socrates", "Taha Taha"],
+            image: "../assets/diploma.png",
         },
         {
             id: 3,
@@ -35,6 +38,7 @@ localStorage.setItem("quizData", JSON.stringify(
             questions: ["Which part is considered the short term memory?", "Which part is the backbone of most of the other parts?", "Which of these is not a real part?"],
             answers: [["RAM", "CPU", "Motherboard", "Ethernet Port"], ["PSU", "Motherboard", "Heat Sink", "GPU"], ["LOL", "RAM", "CPU", "HDD"]],
             correct: ["RAM", "Motherboard", "LOL"],
+            image: "../assets/computer.png",
         }
     ]
 ));
@@ -59,7 +63,7 @@ for (let i = 0; i < quizData.length; i++) {
     let scoreDivID = "btn-score" + quiz.id;
   
     quizCards.innerHTML += `<article class="flex column flex-space-evenly">
-                                <img class="image-above-card" src="../assets/question-mark.svg" alt="question marks">
+                                <img class="image-above-card" src=${quiz.image} alt="question marks">
                                 <div class="homepage-quiz-card flex column flex-space-evenly">
                                     <h1 class="inquiz-title-font quiz-card-titles">${quiz.topic}</h1>
 
