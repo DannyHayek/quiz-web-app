@@ -9,17 +9,17 @@ login.addEventListener("click", loginUser);
 
 // localStorage.clear();
 
-// let test = {
-//     username: "Danny",
-//     password: "123",
-//     scores: [0, 0, 0, 0],
-// }
+let test = {
+    username: "Danny",
+    password: "123",
+    scores: [0, 0, 0, 0],
+}
 
 localStorage.setItem("currentUser", JSON.stringify(test));
 
 let temp = JSON.parse(localStorage.getItem("currentUser"));
 
-console.log(temp);
+//console.log(temp);
 
 function storeUser() {
     loginReadyOff();

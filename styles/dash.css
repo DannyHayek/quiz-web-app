@@ -35,14 +35,18 @@ main {
     text-align: center;
 }
 
-tr {
-    background-color: aliceblue;
+table {
+    border-collapse: collapse;
+    width: 60%;
+    border: 10px groove black;
 }
-
-tr:nth-child(even) {
-    background-color: lightblue;
-}
-
-td {
+  
+td, th {
+    border: 1px solid black;
     text-align: center;
+    padding: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: aliceblue;
 }
