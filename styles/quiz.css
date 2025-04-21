@@ -56,6 +56,10 @@ main {
 
 .submit-button {
     width: 40%;
+    height: 3rem;
+    border-radius: 10px;
+    margin: 15px;
+    font-size: xx-large;
 }
 
 footer {

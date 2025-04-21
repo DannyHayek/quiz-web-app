@@ -66,3 +66,28 @@ function answerSelected(e) {
     console.log(e.target.parentNode.parentNode);
     e.target.parentNode.parentNode.remove();
 }
+
+const submit = document.getElementById("submit-button");
+
+submit.addEventListener("click", submitAnswers);
+
+function submitAnswers() {
+    console.log(curUser.scores[curQuiz.id]);
+    questionsCards.innerHTML = `<section class = "question-card flex flex-space-evenly">
+                                    <div class = "flex column flex-space-evenly quiz-text">
+                                        <img class="question-image" src="../assets/question-mark.svg" alt="question mark">
+
+                                        <h2 id = "question-num" class="inquiz-title-font">YOUR SCORE ON THIS QUIZ</h2>
+
+                                        <p id = "question-num" class="inquiz-text-font">
+                                            ${curUser.scores[curQuiz.id]}/3
+                                        </p>
+                                    </div> 
+                                </section>`
+
+    
+}
+
+// function backToQuizzes () {
+
+// }
