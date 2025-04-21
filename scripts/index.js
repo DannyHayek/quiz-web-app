@@ -50,10 +50,7 @@ function storeUser() {
         userList.push({
             username: user.value,
             password: pass.value,
-            score1: 0,
-            score2: 0,
-            score3: 0,
-            score4: 0,
+            scores: [0, 0, 0, 0],
         })
 
         localStorage.setItem("users", JSON.stringify(userList));
