@@ -73,3 +73,18 @@ main {
     width: 100px;
     height: 100px;
 }
+
+.logout-button {
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+    margin: 15px;
+    font-size: xx-large;
+    background-color: white;
+    color: darkblue;
+}
+
+.logout-button:hover {
+    background-color: rgb(224, 228, 230);
+    color: rgb(28, 176, 246)
+}

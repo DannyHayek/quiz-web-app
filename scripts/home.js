@@ -85,7 +85,7 @@ for (let i = 0; i < quizData.length; i++) {
                                 <p id = "question-num" class="inquiz-text-font flex flex-center">
                                     ${userScores[i]}/3
                                 </p>`
-    }    
+    } 
 }
 
 const quizButtons = document.querySelectorAll(".take-quiz-button");
@@ -102,3 +102,4 @@ for (let i = 0; i < quizButtons.length; i++) {
 }
 
 console.log(localStorage.getItem("currentQuiz"));
+
