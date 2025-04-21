@@ -16,11 +16,21 @@ for (let i = 0; i < users.length; i++) {
     console.log(users);
     userTable.innerHTML += `<tr id="${trID}" class = "table-row">
                                 <td class = "inquiz-text-font table-data">${users[i].username}</td>
-                                <td class = "inquiz-text-font table-data">${users[i].password}</td>
+                                <td class = "inquiz-text-font table-data">${hidePass(users[i].password)}</td>
                             </tr>`
 
     let curRow = document.getElementById(trID);
     for (let j = 0; j < users[i].scores.length; j++) {
         curRow.innerHTML += `<td class = "inquiz-text-font table-data">${users[i].scores[j]}/3</td>`
     }                            
+}
+
+function hidePass(pass) {
+    let starred = ""
+
+    for (let i = 0; i < pass.length; i++) {
+        starred += "*";
+    }
+
+    return starred;
 }
