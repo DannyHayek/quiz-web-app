@@ -85,9 +85,24 @@ function submitAnswers() {
                                     </div> 
                                 </section>`
 
-    
+    submit.textContent = "Back to Quizzes Page";
+
+    submit.addEventListener("click", backToQuizzes);
 }
 
-// function backToQuizzes () {
+function backToQuizzes () {
+    const users = JSON.parse(localStorage.getItem("users"));
 
-// }
+    for (let i = 0; i < users.length; i++) {
+        console.log(users[i].username);
+        if (users[i].username == curUser.username) {
+            users[i].scores = curUser.scores;
+            console.log(users[i].scores);
+            break;
+        }
+    }
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    window.location.href = "../pages/home.html";
+}
