@@ -1,4 +1,7 @@
-const quizCards = document.getElementById("quiz-cards")
+const quizCards = document.getElementById("quiz-cards");
+const users = JSON.parse(localStorage.getItem("users"));
+
+
 localStorage.setItem("quizData", JSON.stringify(
     [
         {
@@ -38,6 +41,16 @@ localStorage.setItem("quizData", JSON.stringify(
 
 
 let quizData = JSON.parse(localStorage.getItem("quizData"));
+let userScores = [0, 0, 0, 0];
+
+for (let i = 0; i < users.length; i++) {
+    if (users[i].username == JSON.parse(localStorage.getItem("currentUser")).username) {
+        userScores = users[i].scores;
+        console.log(userScores);
+        break;
+    }
+}
+
 
 document.getElementById("welcome-user").innerHTML = `Welcome ${JSON.parse(localStorage.getItem("currentUser")).username}`
 
@@ -53,12 +66,26 @@ for (let i = 0; i < quizData.length; i++) {
                                         ${quiz.description}
                                     </p>
 
-                                    <button id="quiz${quiz.id}" class="buttons take-quiz-button inquiz-title-font">
-                                        Take Quiz!
-                                    </button>
+                                    <div id = "btn-score">
+                                        <button id="quiz${quiz.id}" class="buttons take-quiz-button inquiz-title-font">
+                                            Take Quiz!
+                                        </button>
+                                    </div>
+                                    
                                 </div>
                             </article>`
 
+    let btnScoreDiv = document.getElementById("btn-score");
+
+    console.log(userScores[i]);
+
+    if (userScores[i] != 0) {
+        btnScoreDiv.innerHTML =`<h2 id = "question-num" class="inquiz-title-font">YOUR SCORE ON THIS QUIZ</h2>
+
+                                <p id = "question-num" class="inquiz-text-font flex flex-center">
+                                    ${userScores[i]}/3
+                                </p>`
+    }    
 }
 
 const quizButtons = document.querySelectorAll(".take-quiz-button");

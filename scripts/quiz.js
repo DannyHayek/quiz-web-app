@@ -5,6 +5,18 @@ let curQuiz = quizData[currentQuizID];
 const questionsCards = document.getElementById("question-card");
 const curUser = JSON.parse(localStorage.getItem("currentUser"));
 const curQuizScore = "score" + (curQuiz.id + 1);
+const users = JSON.parse(localStorage.getItem("users"));
+
+let userScores = [0, 0, 0, 0];
+
+for (let i = 0; i < users.length; i++) {
+    if (users[i].username == JSON.parse(localStorage.getItem("currentUser")).username) {
+        userScores = users[i].scores;
+        console.log(userScores);
+        break;
+    }
+}
+
 
 console.log(curQuizScore);
 
@@ -57,7 +69,7 @@ function answerSelected(e) {
 
     if (curQuiz.correct[questionID] == e.target.innerText) {
         console.log("CORRECT");
-        curUser.scores[curQuiz.id]++;
+        userScores[curQuiz.id]++;
         console.log(curUser.scores);
     } else {
         console.log("WRONG");
@@ -72,7 +84,7 @@ const submit = document.getElementById("submit-button");
 submit.addEventListener("click", submitAnswers);
 
 function submitAnswers() {
-    console.log(curUser.scores[curQuiz.id]);
+    console.log(userScores[curQuiz.id]);
     questionsCards.innerHTML = `<section class = "question-card flex flex-space-evenly">
                                     <div class = "flex column flex-space-evenly quiz-text">
                                         <img class="question-image" src="../assets/question-mark.svg" alt="question mark">
@@ -80,7 +92,7 @@ function submitAnswers() {
                                         <h2 id = "question-num" class="inquiz-title-font">YOUR SCORE ON THIS QUIZ</h2>
 
                                         <p id = "question-num" class="inquiz-text-font">
-                                            ${curUser.scores[curQuiz.id]}/3
+                                            ${userScores[curQuiz.id]}/3
                                         </p>
                                     </div> 
                                 </section>`
@@ -91,12 +103,12 @@ function submitAnswers() {
 }
 
 function backToQuizzes () {
-    const users = JSON.parse(localStorage.getItem("users"));
+    // const users = JSON.parse(localStorage.getItem("users"));
 
     for (let i = 0; i < users.length; i++) {
         console.log(users[i].username);
         if (users[i].username == curUser.username) {
-            users[i].scores = curUser.scores;
+            users[i].scores = userScores;
             console.log(users[i].scores);
             break;
         }

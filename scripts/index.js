@@ -9,11 +9,11 @@ login.addEventListener("click", loginUser);
 
 //localStorage.clear();
 
-let test = {
-    username: "Danny",
-    password: "123",
-    scores: [0, 0, 0, 0],
-}
+// let test = {
+//     username: "Danny",
+//     password: "123",
+//     scores: [0, 0, 0, 0],
+// }
 
 localStorage.setItem("currentUser", JSON.stringify(test));
 
