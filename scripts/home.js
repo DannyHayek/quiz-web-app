@@ -103,3 +103,10 @@ for (let i = 0; i < quizButtons.length; i++) {
 
 console.log(localStorage.getItem("currentQuiz"));
 
+const logoutButton = document.getElementById("logout-button");
+
+logoutButton.addEventListener("click", logout);
+
+function logout() {
+    window.location.href = "../index.html";
+}
