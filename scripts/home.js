@@ -56,6 +56,7 @@ document.getElementById("welcome-user").innerHTML = `Welcome ${JSON.parse(localS
 
 for (let i = 0; i < quizData.length; i++) {
     const quiz = quizData[i];
+    let scoreDivID = "btn-score" + quiz.id;
   
     quizCards.innerHTML += `<article class="flex column flex-space-evenly">
                                 <img class="image-above-card" src="../assets/question-mark.svg" alt="question marks">
@@ -66,7 +67,7 @@ for (let i = 0; i < quizData.length; i++) {
                                         ${quiz.description}
                                     </p>
 
-                                    <div id = "btn-score">
+                                    <div id = "${scoreDivID}">
                                         <button id="quiz${quiz.id}" class="buttons take-quiz-button inquiz-title-font">
                                             Take Quiz!
                                         </button>
@@ -75,7 +76,7 @@ for (let i = 0; i < quizData.length; i++) {
                                 </div>
                             </article>`
 
-    let btnScoreDiv = document.getElementById("btn-score");
+    let btnScoreDiv = document.getElementById(scoreDivID);
 
     console.log(userScores[i]);
 
@@ -87,6 +88,20 @@ for (let i = 0; i < quizData.length; i++) {
                                 </p>`
     } 
 }
+
+// for (let i = 0; i < users.length; i++) {
+//     let trID = "table-row" + i;
+//     console.log(users);
+//     userTable.innerHTML += `<tr id="${trID}" class = "table-row">
+//                                 <td class = "inquiz-text-font table-data">${users[i].username}</td>
+//                                 <td class = "inquiz-text-font table-data">${hidePass(users[i].password)}</td>
+//                             </tr>`
+
+//     let curRow = document.getElementById(trID);
+//     for (let j = 0; j < users[i].scores.length; j++) {
+//         curRow.innerHTML += `<td class = "inquiz-text-font table-data">${users[i].scores[j]}/3</td>`
+//     }                            
+// }
 
 const quizButtons = document.querySelectorAll(".take-quiz-button");
 
