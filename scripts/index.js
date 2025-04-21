@@ -7,16 +7,15 @@ let curUser = {};
 register.addEventListener("click", storeUser);
 login.addEventListener("click", loginUser);
 
-let place = {
+//localStorage.clear();
+
+let test = {
     username: "Danny",
     password: "123",
-    score1: 0,
-    score2: 0,
-    score3: 0,
-    score4: 0,
+    scores: [0, 0, 0, 0],
 }
 
-localStorage.setItem("currentUser", JSON.stringify(place));
+localStorage.setItem("currentUser", JSON.stringify(test));
 
 let temp = JSON.parse(localStorage.getItem("currentUser"));
 

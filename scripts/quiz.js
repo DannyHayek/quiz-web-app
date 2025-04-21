@@ -52,10 +52,13 @@ for (let i = 0; i < answerButtons.length; i++) {
 function answerSelected(e) {
     const questionID = e.target.parentNode.parentNode.parentNode.id;
 
-    console.log(correct, selected);
+    console.log(curQuiz.correct[questionID], e.target.innerText);
+    console.log(curUser.scores);
 
     if (curQuiz.correct[questionID] == e.target.innerText) {
         console.log("CORRECT");
+        curUser.scores[curQuiz.id]++;
+        console.log(curUser.scores);
         return;
     }
     console.log("WRONG");
