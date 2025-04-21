@@ -9,17 +9,29 @@ login.addEventListener("click", loginUser);
 
 //localStorage.clear();
 
-let admin = {
-    username: "admin",
-    password: "admin",
-    scores: [0, 0, 0, 0],
+console.log(JSON.parse(localStorage.getItem("users")));
+
+if (JSON.parse(localStorage.getItem("users")) == null) {
+    console.log(JSON.parse(localStorage.getItem("users")));
+    let admin = {
+        username: "admin",
+        password: "admin",
+        scores: [0, 0, 0, 0],
+    }
+
+    localStorage.setItem("users", JSON.stringify([admin]));
+
+    localStorage.setItem("currentUser", JSON.stringify(admin));
+
+    console.log(JSON.parse(localStorage.getItem("users")));
 }
 
-localStorage.setItem("users", JSON.stringify([admin]))
 
-localStorage.setItem("currentUser", JSON.stringify(admin));
+// localStorage.setItem("users", JSON.stringify([admin]));
 
-let temp = JSON.parse(localStorage.getItem("currentUser"));
+// localStorage.setItem("currentUser", JSON.stringify(admin));
+
+// let temp = JSON.parse(localStorage.getItem("currentUser"));
 
 //console.log(temp);
 
@@ -29,10 +41,6 @@ function storeUser() {
     errorPassOff();
     NAUserOff();
     alreadyUserOff();
-
-    if (JSON.parse(localStorage.getItem("users")) == []) {
-        localStorage.setItem("users", JSON.stringify([admin]));
-    } else {
 
     const user = document.getElementById("username");
     const pass = document.getElementById("password");
@@ -66,7 +74,6 @@ function storeUser() {
 
     // console.log(localStorage);
 
-    }
 }
 
 function loginUser() {

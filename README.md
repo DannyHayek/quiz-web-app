@@ -1,7 +1,7 @@
 This is the front-end of a quiz application webpage.
 
-This webpage features:
-    - User authentication
+This webpage features:\n
+    - User authentication/n
     - Admin dashboard to see users and scores
     - Quizzes that can be added as they are dynamically generated from localStorage
     - Similarly dynamic questions
