@@ -53,13 +53,16 @@ function answerSelected(e) {
     const questionID = e.target.parentNode.parentNode.parentNode.id;
 
     console.log(curQuiz.correct[questionID], e.target.innerText);
-    console.log(curUser.scores);
+    //console.log(curUser.scores);
 
     if (curQuiz.correct[questionID] == e.target.innerText) {
         console.log("CORRECT");
         curUser.scores[curQuiz.id]++;
         console.log(curUser.scores);
-        return;
+    } else {
+        console.log("WRONG");
     }
-    console.log("WRONG");
+
+    console.log(e.target.parentNode.parentNode);
+    e.target.parentNode.parentNode.remove();
 }
