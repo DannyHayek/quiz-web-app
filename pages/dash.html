@@ -9,7 +9,7 @@
     <script src="../scripts/dash.js" defer></script>
     <link rel="icon" type="image/x-icon" href="../assets/question-mark.svg">
 </head>
-<body>
+<body class="flex column">
     <header class="flex flex-space-evenly">
         <h1 class="inquiz-title-font">InQuizitive!</h1>
 
@@ -17,5 +17,18 @@
 
         <button id="logout-button" class="logout-button inquiz-title-font">LOG OUT</button>
     </header>
+
+    <main class="flex flex-center">
+        <table id="user-table" class="user-table">
+            <tr>
+                <th class = "inquiz-text-font table-head">USERNAME</th>
+                <th class = "inquiz-text-font table-head">PASSWORD</th>
+                <th class = "inquiz-text-font table-head">SCORE QUIZ 1</th>
+                <th class = "inquiz-text-font table-head">SCORE QUIZ 2</th>
+                <th class = "inquiz-text-font table-head">SCORE QUIZ 3</th>
+                <th class = "inquiz-text-font table-head">SCORE QUIZ 4</th>
+            </tr>
+        </table>
+    </main>
 </body>
 </html>
