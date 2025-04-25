@@ -8,12 +8,12 @@ function logout() {
     window.location.href = "../index.html";
 }
 
-console.log(users);
+// console.log(users);
 
 
 for (let i = 0; i < users.length; i++) {
     let trID = "table-row" + i;
-    console.log(users);
+    // console.log(users);
     userTable.innerHTML += `<tr id="${trID}" class = "table-row">
                                 <td class = "inquiz-text-font table-data">${users[i].username}</td>
                                 <td class = "inquiz-text-font table-data">${hidePass(users[i].password)}</td>

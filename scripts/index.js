@@ -9,7 +9,7 @@ login.addEventListener("click", loginUser);
 
 //localStorage.clear();
 
-console.log(JSON.parse(localStorage.getItem("users")));
+// console.log(JSON.parse(localStorage.getItem("users")));
 
 if (JSON.parse(localStorage.getItem("users")) == null) {
     console.log(JSON.parse(localStorage.getItem("users")));
@@ -23,7 +23,7 @@ if (JSON.parse(localStorage.getItem("users")) == null) {
 
     localStorage.setItem("currentUser", JSON.stringify(admin));
 
-    console.log(JSON.parse(localStorage.getItem("users")));
+    // console.log(JSON.parse(localStorage.getItem("users")));
 }
 
 
@@ -47,7 +47,7 @@ function storeUser() {
 
     let userList = JSON.parse(localStorage.getItem("users"));
 
-    console.log(userList);
+    // console.log(userList);
 
     if (user.value == "" || pass.value == "") {
         console.log("You have missing data!");
@@ -97,9 +97,9 @@ function loginUser() {
         setCurrentUser(user.value);
         console.log(JSON.parse(localStorage.getItem("currentUser")));
         if (user.value == "admin"){
-            window.location.href = "../pages/dash.html";
+            window.location.href = "./pages/dash.html";
         } else {
-            window.location.href = "../pages/home.html";
+            window.location.href = "./pages/home.html";
         }
     } else if (checkUsers(user.value) && !checkPassword(user.value, pass.value)) {
         console.log("Incorrect password!")
